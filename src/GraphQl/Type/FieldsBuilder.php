@@ -342,6 +342,10 @@ final class FieldsBuilder implements FieldsBuilderInterface
                     'type' => GraphQLType::string(),
                     'description' => 'Returns the elements in the list that come after the specified cursor.',
                 ],
+                'offset' => [
+                    'type' => GraphQLType::int(),
+                    'description' => 'Page number',
+                ],
             ];
         }
 

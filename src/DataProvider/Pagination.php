@@ -77,6 +77,10 @@ final class Pagination
     {
         $graphql = (bool) ($context['graphql_operation_name'] ?? false);
 
+        if ($offset = $this->getParameterFromContext($context, 'offset')) {
+            return (int) $offset;
+        }
+
         $limit = $this->getLimit($resourceClass, $operationName, $context);
 
         if ($graphql && null !== ($after = $this->getParameterFromContext($context, 'after'))) {
